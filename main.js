@@ -1,9 +1,6 @@
   let app = {
 
       squares: document.querySelectorAll('.game-grid'),
-
-      yuki: document.createElement('IMG'),
-      brandon: document.createElement('IMG'),
       currentPlayersTurn: true,
 
       init: () => {
@@ -30,12 +27,12 @@
           if (app.currentPlayersTurn) {
               ev.target.classList.add("x")
               // Sticking yukis head into the game
-            //   app.yukiHead(appendHead)
+              app.yukiHead(appendHead)
               app.currentPlayersTurn = !app.currentPlayersTurn
           } else {
-            //   app.brandonHead(appendHead)
+              app.brandonHead(appendHead)
               // Sticking brandons head into the game
-              ev.target.classList.add("o")
+              ev.target.classList.add("o") 
               app.currentPlayersTurn = !app.currentPlayersTurn
           }
 
@@ -43,22 +40,22 @@
 
       yukiHead: (target) => {
           // Create img of Yuki head
-          let yukiHead = app.yuki
+          let yukiHead = document.createElement('IMG')
           yukiHead.setAttribute("src", "img/YukiHead.png")
           yukiHead.classList.add("yuki")
 
           // Append Yuki Head to square clicked.
           let addChoice = document.getElementById(target)
-          console.log(addChoice)
-          console.log(target)
           addChoice.appendChild(yukiHead)
 
           console.log("Yuki head is now in the game!")
+          console.log(addChoice)
+          console.log(target)
       },
 
       brandonHead: (target) => {
           // Create img of Brandon head
-          let brandonHead = app.brandon
+          let brandonHead = document.createElement('IMG')
           brandonHead.setAttribute("src", "img/brandon.png")
           brandonHead.classList.add("brandon")
 
@@ -67,6 +64,9 @@
           addChoice.appendChild(brandonHead)
 
           console.log("Brandon head is now in the game!")
+          console.log(addChoice)
+          console.log(target)
+
       }
   }
 

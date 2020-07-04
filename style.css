@@ -42,12 +42,14 @@ body {
     justify-content: center;
 }
 
-.x::after{
+/* .x::after{
     content: url(/img/YukiHead.png);
-    justify-content: center;
+    height: 50vh;
+    width: 50vh;
 }
 
 .o::after{
     content: url(/img/brandon.png);
-    justify-content: center;
+    height: 50vh;
+    width: 50vh; */
 }
