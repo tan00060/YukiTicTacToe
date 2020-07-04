@@ -11,6 +11,8 @@
               console.log(app.squares[i])
               app.squares[i].addEventListener('click', app.pickingSquare)
           }
+
+          document.getElementById('newGame').addEventListener('click', app.newGame)
       },
 
       pickingSquare: (ev) => {
@@ -34,7 +36,7 @@
           } else {
               app.brandonHead(appendHead)
               // Sticking brandons head into the game
-              ev.target.classList.add("o") 
+              ev.target.classList.add("o")
               app.currentPlayersTurn = !app.currentPlayersTurn
           }
 
@@ -62,6 +64,17 @@
           let addChoice = document.getElementById(target)
           addChoice.appendChild(brandonHead)
           console.log("Brandon head is now in the game!")
+      },
+
+      newGame: () => {
+        console.log("Starting a new game")
+        for (let i = 0; i < app.squares.length; i++) {
+            app.squares[i].removeChild(app.squares[i].firstChild)
+            app.squares[i].classList.remove('o')
+            app.squares[i].classList.remove('x')
+        }
+
+
       }
   }
 
