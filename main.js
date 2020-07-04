@@ -5,6 +5,8 @@
 
       init: () => {
           console.log("The next yuki meme game in the making.")
+
+          // Applying click function to squares so players can pick.
           for (let i = 0; i < app.squares.length; i++) {
               console.log(app.squares[i])
               app.squares[i].addEventListener('click', app.pickingSquare)
@@ -47,10 +49,7 @@
           // Append Yuki Head to square clicked.
           let addChoice = document.getElementById(target)
           addChoice.appendChild(yukiHead)
-
           console.log("Yuki head is now in the game!")
-          console.log(addChoice)
-          console.log(target)
       },
 
       brandonHead: (target) => {
@@ -62,11 +61,7 @@
           // Append Brandon head to square clicked.
           let addChoice = document.getElementById(target)
           addChoice.appendChild(brandonHead)
-
           console.log("Brandon head is now in the game!")
-          console.log(addChoice)
-          console.log(target)
-
       }
   }
 
