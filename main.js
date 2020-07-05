@@ -5,14 +5,14 @@
 
       init: () => {
           console.log("The next yuki meme game in the making.")
+          // New game button
+          document.getElementById('newGame').addEventListener('click', app.newGame)
 
           // Applying click function to squares so players can pick.
           for (let i = 0; i < app.squares.length; i++) {
               console.log(app.squares[i])
               app.squares[i].addEventListener('click', app.pickingSquare)
           }
-
-          document.getElementById('newGame').addEventListener('click', app.newGame)
       },
 
       pickingSquare: (ev) => {
@@ -68,8 +68,14 @@
 
       newGame: () => {
         console.log("Starting a new game")
+
+        // Finds all squares that have faces and removes them.
         for (let i = 0; i < app.squares.length; i++) {
-            app.squares[i].removeChild(app.squares[i].firstChild)
+            console.log(app.squares[i].firstChild)
+            if (app.squares[i].firstChild != null){
+                app.squares[i].removeChild(app.squares[i].firstChild)
+            }
+        // removes the markers indicating which squares have been picked
             app.squares[i].classList.remove('o')
             app.squares[i].classList.remove('x')
         }
